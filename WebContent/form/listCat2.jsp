@@ -25,13 +25,15 @@
 				<th>Name</th>
 				<th>CreateDate</th>
 			</tr>
-			<logic:iterate id="cat" name="catList">
-				<tr>
-					<td><bean:write name="cat" property="id" /></td>
-					<td><bean:write name="cat" property="name" /></td>
-					<td><bean:write name="cat" property="createdDate" format="yyyy-MM-dd HH:mm:ss" /></td>
-				</tr>
-			</logic:iterate>
+			<logic:notEmpty name="catList"> 		
+				<logic:iterate id="cat" name="catList">
+					<tr>
+						<td><bean:write name="cat" property="id" /></td>
+						<td><bean:write name="cat" property="name" /></td>
+						<td><bean:write name="cat" property="createdDate" format="yyyy-MM-dd HH:mm:ss" /></td>
+					</tr>
+				</logic:iterate>
+			</logic:notEmpty>
 		</table>
 		
 	</body>
